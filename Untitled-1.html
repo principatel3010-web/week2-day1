@@ -1,0 +1,123 @@
+import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+export default function App() {
+  return (
+    <div className="d-flex flex-column min-vh-100">
+      <MainNavbar />
+
+      <main className="flex-grow-1">
+        <HomeSection />
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
+
+function MainNavbar() {
+  return (
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container">
+        <a className="navbar-brand" href="#">TS Project</a>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navMenu">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <a className="nav-link active" href="#home">Home</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#features">Features</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+function HomeSection() {
+  return (
+    <section id="home" className="py-5">
+      <div className="container">
+        <div className="row align-items-center">
+          <div className="col-md-6">
+            <h1 className="display-5">Welcome to My App</h1>
+            <p className="lead">This is a simple React + Bootstrap layout created on Day 1 — folder structure and basic UI.</p>
+
+            <ul>
+              <li>Create a new Vite + React project</li>
+              <li>Install Bootstrap</li>
+              <li>Build Main Navbar, Home Section, Footer</li>
+            </ul>
+
+            <p>Placeholder component text: "This is a component."</p>
+
+            <a href="#features" className="btn btn-primary">Explore</a>
+          </div>
+
+          <div className="col-md-6 text-center mt-4 mt-md-0">
+            {/* placeholder image — replace with your images in /public or /src/assets */}
+            <img src="https://via.placeholder.com/560x320.png?text=Placeholder+Image" alt="placeholder" className="img-fluid rounded shadow" />
+          </div>
+        </div>
+
+        <hr className="my-5" />
+
+        <div id="features" className="row">
+          <div className="col-md-4">
+            <h4>Feature A</h4>
+            <p>Short description. Add components into src/components/</p>
+          </div>
+          <div className="col-md-4">
+            <h4>Feature B</h4>
+            <p>Short description. Use placeholder text/images while building.</p>
+          </div>
+          <div className="col-md-4">
+            <h4>Feature C</h4>
+            <p>Short description. Keep layout responsive with Bootstrap grid.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="bg-light text-center text-lg-start mt-auto border-top">
+      <div className="container p-4">
+        <div className="row">
+          <div className="col-lg-6 col-md-12 mb-4 mb-md-0 text-start">
+            <h6 className="text-uppercase">TS Project</h6>
+            <p>Students understand the folder structure and layout building.</p>
+          </div>
+
+          <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h6 className="text-uppercase">Links</h6>
+            <ul className="list-unstyled mb-0">
+              <li><a href="#!" className="text-dark">Home</a></li>
+              <li><a href="#!" className="text-dark">About</a></li>
+              <li><a href="#!" className="text-dark">Contact</a></li>
+            </ul>
+          </div>
+
+          <div className="col-lg-3 col-md-6 mb-4 mb-md-0 text-end">
+            <small>Due date: Dec 9th, 2025 10:00 AM</small>
+            <p className="mb-0">12h 37m remaining</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="text-center p-3 bg-dark text-white">
+        © {new Date().getFullYear()} TS Project
+      </div>
+    </footer>
+  );
+}
